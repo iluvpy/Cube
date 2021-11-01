@@ -1,0 +1,12 @@
+cflags = -std=c11
+lflags = -lGL -lglfw -lGLEW
+cxx = clang
+
+rule cc
+  command = $cxx -c $in -o $out $cflags
+rule lnk
+  command = $cxx $in -o $out $lflags 
+
+build obj/cube.o: cc src/cube.c
+
+build client: lnk obj/cube.o

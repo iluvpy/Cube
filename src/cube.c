@@ -37,6 +37,7 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		angle += increment;
+		angle = (angle < 360.0f) ? angle : 0.0f;
 		glLoadIdentity();
 		glRotatef(angle, 1.0f, 1.0f, 0.0f);
 
